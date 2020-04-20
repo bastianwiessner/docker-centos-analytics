@@ -7,6 +7,10 @@ env:
     - REGISTRY_USER=$DOCKER_USERNAME
     - REGISTRY_PASS=$DOCKER_PASSWORD  
 
+branches:
+  only:
+  - master
+
 before_script:
   - docker pull "$IMAGE_NAME" || true
 
@@ -23,5 +27,5 @@ deploy:
   provider: script
   script: docker push "${IMAGE_NAME}:v1"
   on:
-    branch: develop
+    branch: master
 
