@@ -11,8 +11,7 @@ RUN dnf group install -y "Development Tools"
 # install necessary operating system libraries
 RUN dnf install -y \
  cairo-devel \
- gcc-* \
- libcurl-devel \
+ gcc-gfortran \
  libicu-devel \
  libjpeg-turbo-devel \
  libpng-devel \
@@ -24,4 +23,5 @@ RUN dnf install -y \
  readline-devel \
  texlive* \
  wget \
- which
+ which \
+ libcurl-devel
